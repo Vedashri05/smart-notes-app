@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}My Notes{% endblock %}
+
+{% block content %}
+
+<div class="notes-header">
+    <h1>Notes</h1>
+    <form method="get"
+      action="{{ url_for('notes.view_notes') }}"
+      class="filter-form">
+
+        <select name="category" onchange="this.form.submit()">
+            <!-- Placeholder label -->
+            <option disabled hidden>
+                Sort by category
+            </option>
+
+            <option value="All"
+                {% if selected_category == "All" %}selected{% endif %}>
+                All Notes
+            </option>
+
+            <option value="StudyNotes"
+                {% if selected_category == "StudyNotes" %}selected{% endif %}>
+                StudyNotes
+            </option>
+
+            <option value="Reminder"
+                {% if selected_category == "Reminder" %}selected{% endif %}>
+                Reminder
+            </option>
+
+            <option value="Personal"
+                {% if selected_category == "Personal" %}selected{% endif %}>
+                Personal
+            </option>
+        </select>
+    </form>
+
+    <a href="{{ url_for('notes.add_note') }}" class="add-btn">+ Add Note</a><br>
+</div><br>
+
+
+<div class="notes-grid">
+    {% for note in notes %}
+    <div class="note-card">
+        <h3>{{ note.title }}</h3><br>
+        <p>{{ note.content[:25] }} ...</p><br>
+        <small class="note-time">
+            Created on {{ note.created_at.strftime('%d %b %Y, %I:%M %p') }}
+        </small><br><br>
+        <div class="card-actions">
+            <div class="action-icons">
+                <a href="{{ url_for('notes.display_note', note_id=note.id) }}">
+                    <i class="fa-solid fa-eye view-icon"></i>
+                </a>
+                <a href="{{ url_for('notes.edit_note', note_id=note.id) }}">
+                    <i class="fa-solid fa-pen-to-square edit-icon"></i>
+                </a>
+
+                <form method="POST"
+                    action="{{ url_for('notes.delete_note', note_id=note.id) }}">
+                    <button type="submit"><i class="fa-solid fa-trash delete-icon"></i></button>
+                </form>
+            </div>
+
+            <span class="category {{ note.category }}">
+                {{ note.category }}
+            </span>
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+

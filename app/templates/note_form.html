@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Note{% endblock %}
+
+{% block content %}
+<div class="form-box">
+    <h2>{{ 'Edit Note' if note else 'Add Note' }}</h2>
+
+    <form method="POST">
+        <label>Title</label>
+        <input type="text" name="title"
+               value="{{ note.title if note else '' }}" required>
+
+        <label>Content</label>
+        <textarea name="content" rows="10" required>{{ note.content if note else '' }}</textarea>
+
+        {% if request.endpoint == 'notes.edit_note' %}
+            <label>Category</label>
+            <select name="category">
+                <option value="StudyNotes" {{ 'selected' if note.category == 'StudyNotes' else '' }}>StudyNotes</option>
+                <option value="Remainder" {{ 'selected' if note.category == 'Remainder' else '' }}>Remainder</option>
+                <option value="Personal" {{ 'selected' if note.category == 'Personal' else '' }}>Personal</option>
+            </select>
+        {% endif %}
+
+        <button type="submit">Save</button>
+    </form>
+</div>
+{% endblock %}

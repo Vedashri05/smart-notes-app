@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}View Note{% endblock %}
+
+{% block content %}
+<div class="split-layout">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+        <h3>My Notes</h3>
+        <ul>
+            {% for n in notes %}
+            <li class="{{ 'active' if n.id == note.id else '' }}">
+                <a href="{{ url_for('notes.display_note', note_id=n.id) }}">
+                    {{ n.title }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </aside>
+
+    <!-- RIGHT CONTENT -->
+    <main class="note-view">
+        <h1>{{ note.title }}</h1>
+        <p class="note-text">{{ note.content }}</p>
+
+        <div class="actions">
+            <a href="{{ url_for('notes.edit_note', note_id=note.id) }}">✏️ Edit</a>
+
+            <form method="POST"
+                  action="{{ url_for('notes.delete_note', note_id=note.id) }}">
+                <button type="submit">🗑 Delete</button>
+            </form>
+        </div>
+    </main>
+
+</div>
+{% endblock %}
