@@ -92,27 +92,12 @@ git clone https://github.com/Vedashri05/smart-notes-app.git
 cd smart-notes-app
 ```
 
-#### 2. Create and Activate Virtual Environment
-
-```bash
-python -m venv venv
-```
-Activate:
-```bash
-# For Windows:
-venv\Scripts\activate
-```
-```bash
-# For macOS / Linux:
-source venv/bin/activate
-```
-
-#### 3. Install Dependencies
+#### 2. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-#### 4. Create .env File
+#### 3. Create .env File
 Create a .env file in the project root and add:
 
 ```env
@@ -123,12 +108,12 @@ DB_HOST=localhost
 DB_NAME=notes_db
 ```
 
-#### 5. Create MySQL Database
+#### 4. Create MySQL Database
 ```bash
 CREATE DATABASE notes_db;
 ```
 
-#### 6. Run the Application
+#### 5. Run the Application
 ```bash
 python run.py
 ```
