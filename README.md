@@ -58,29 +58,27 @@ project/
 ├── README.md
 └── .gitignore
 
----
-
 ```
 
 ## 📸 Screenshots
 
 ### Login Page
-<p align="center">
+<p>
   <img src="screenshots/login_page.png" alt="Login Page" width="400">
 </p>
 
 ### Notes Dashboard
-<p align="center">
+<p>
   <img src="screenshots/home_page.png" alt="Notes Dashboard" width="500">
 </p>
 
 ### Edit Note
-<p align="center">
+<p>
   <img src="screenshots/edit_note.png" alt="Edit Note" width="400">
 </p>
 
 ### View Note
-<p align="center">
+<p>
   <img src="screenshots/view_note.png" alt="View Note" width="400">
 </p>
 
