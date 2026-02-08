@@ -23,11 +23,7 @@ A Flask-based notes management web application that uses Machine Learning to aut
 - Prediction happens when a note is saved
 - The predicted category can be changed by the user later
 - ML logic is separated inside the `ml/` folder
-
-### 📌 Supported Categories
-- **Personal**
-- **Study Notes**
-- **Reminder**
+- Supported Categories: **Personal**, **Study Notes**, **Reminder**
 
 ---
 
@@ -46,38 +42,22 @@ A Flask-based notes management web application that uses Machine Learning to aut
 
 ```text
 project/
-├── run.py  # Application entry point
+├── run.py 
 ├── app/
-│ ├── init.py  # App factory & configuration
+│ ├── init.py 
 │ ├── models.py  # Database models
 │ ├── routes/
 │ │ ├── auth.py  # Login, register, logout
 │ │ └── notes.py  # Notes CRUD & filtering
 │ ├── ml/
-│ │ ├── label_encoder.pkl  
-│ │ ├── vectorizer.pkl 
-│ │ └── lr_model.pkl  
-│ └── forms.py  # WTForms definitions
-│
+│ └── forms.py 
 ├── templates/
-│ ├── base.html
-│ ├── register.html
-│ ├── login.html
-│ ├── notes.html
-│ ├── note_form.html
-│ └── note_display.html
-│
 ├── static/
-│   ├── css/
-│   │   └── style.css
-│   └── js/
-│       └── script.js
 │
 ├── screenshots/ 
 ├── requirements.txt
 ├── README.md
 └── .gitignore
-
 
 ---
 
@@ -121,13 +101,11 @@ cd YOUR_REPO_NAME
 python -m venv venv
 ```
 Activate:
-
-Windows:
 ```bash
+# For Windows:
 venv\Scripts\activate
-``` 
-macOS / Linux:
-```bash
+
+# For macOS / Linux:
 source venv/bin/activate
 ```
 
@@ -139,11 +117,13 @@ pip install -r requirements.txt
 #### 4. Create .env File
 Create a .env file in the project root and add:
 
+```env
 SECRET_KEY=your_secret_key
 DB_USER=root
 DB_PASSWORD=your_mysql_password
 DB_HOST=localhost
 DB_NAME=notes_db
+```
 
 #### 5. Create MySQL Database
 ```bash
