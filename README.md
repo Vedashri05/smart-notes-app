@@ -1,10 +1,10 @@
-# 📝 Smart Notes Application
+# Smart Notes Application
 
 A Flask-based notes management web application that uses Machine Learning to automatically predict note categories. Users can edit the predicted category while editing the note. The application also includes user authentication and category-based note filtering.
 
 ---
 
-## 🚀 Features
+## Features
 
 - User login and registration using WTForms
 - Add, edit, view, and delete notes
@@ -17,7 +17,7 @@ A Flask-based notes management web application that uses Machine Learning to aut
 
 ---
 
-## 🧠 Machine Learning
+## Machine Learning
 
 - The ML model predicts the note category based on the note content
 - Prediction happens when a note is saved
@@ -31,7 +31,7 @@ A Flask-based notes management web application that uses Machine Learning to aut
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Backend:** Python, Flask
 - **Database:** MySQL
@@ -86,16 +86,24 @@ project/
 ## 📸 Screenshots
 
 ### Login Page
-![Login Page](screenshots/login_page.png)
+<p align="center">
+  <img src="screenshots/login_page.png" alt="Login Page" width="400">
+</p>
 
 ### Notes Dashboard
-![Dashboard](screenshots/home_page.png)
+<p align="center">
+  <img src="screenshots/home_page.png" alt="Notes Dashboard" width="500">
+</p>
 
 ### Edit Note
-![Edit Note](screenshots/edit_note.png)
+<p align="center">
+  <img src="screenshots/edit_note.png" alt="Edit Note" width="400">
+</p>
 
 ### View Note
-![View Note](screenshots/view_note.png)
+<p align="center">
+  <img src="screenshots/view_note.png" alt="View Note" width="400">
+</p>
 
 ---
 
@@ -105,26 +113,30 @@ project/
 ```bash
 git clone https://github.com/Vedashri05/YOUR_REPO_NAME.git
 cd YOUR_REPO_NAME
+```
 
 #### 2. Create and Activate Virtual Environment
 
 ```bash
 python -m venv venv
-
+```
 Activate:
 
 Windows:
-
+```bash
 venv\Scripts\activate
-
+``` 
 macOS / Linux:
-
+```bash
 source venv/bin/activate
+```
 
-3️⃣ Install Dependencies
+#### 3. Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 
-4️⃣ Create .env File
+#### 4. Create .env File
 Create a .env file in the project root and add:
 
 SECRET_KEY=your_secret_key
@@ -133,11 +145,14 @@ DB_PASSWORD=your_mysql_password
 DB_HOST=localhost
 DB_NAME=notes_db
 
-5️⃣ Create MySQL Database
+#### 5. Create MySQL Database
+```bash
 CREATE DATABASE notes_db;
+```
 
-6️⃣ Run the Application
+#### 6. Run the Application
+```bash
 python run.py
-
+```
 Open your browser and visit:
 http://127.0.0.1:5000/
