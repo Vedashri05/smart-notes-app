@@ -22,8 +22,7 @@ A Flask-based notes management web application that uses Machine Learning to aut
 - The ML model predicts the note category based on the note content
 - Prediction happens when a note is saved
 - The predicted category can be changed by the user later
-- ML logic is separated inside the `ml/` folder
-- Supported Categories: **Personal**, **Study Notes**, **Reminder**
+- Supported Categories: `Personal`, `Study Notes`, `Reminder`
 
 ---
 
@@ -45,7 +44,7 @@ project/
 ├── run.py 
 ├── app/
 │ ├── init.py 
-│ ├── models.py  # Database models
+│ ├── models.py  
 │ ├── routes/
 │ │ ├── auth.py  # Login, register, logout
 │ │ └── notes.py  # Notes CRUD & filtering
@@ -91,8 +90,8 @@ project/
 
 #### 1. Clone the Repository
 ```bash
-git clone https://github.com/Vedashri05/YOUR_REPO_NAME.git
-cd YOUR_REPO_NAME
+git clone https://github.com/Vedashri05/smart-notes-app.git
+cd smart-notes-app
 ```
 
 #### 2. Create and Activate Virtual Environment
@@ -104,7 +103,8 @@ Activate:
 ```bash
 # For Windows:
 venv\Scripts\activate
-
+```
+```bash
 # For macOS / Linux:
 source venv/bin/activate
 ```
